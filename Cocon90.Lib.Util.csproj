@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B05CE8A9-5AAA-46AF-9988-49D1EE3889E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cocon90.Lib.Util</RootNamespace>
+    <AssemblyName>Cocon90.Lib.Util</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Cocon90.Lib.Util.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animate\animateHelper.cs" />
+    <Compile Include="Config\configHelper.cs" />
+    <Compile Include="Controls\Alerter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Alerter.Designer.cs">
+      <DependentUpon>Alerter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\controlHelper.cs" />
+    <Compile Include="Controls\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Msg\AnimationManager.cs" />
+    <Compile Include="Controls\Msg\InvisibleLabel.cs" />
+    <Compile Include="Controls\MemCombox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Msg\Toast.cs" />
+    <Compile Include="Controls\Pager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Msg\ToastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ency\md5.cs" />
+    <Compile Include="Ency\md5Sign.cs" />
+    <Compile Include="Ency\decy.cs" />
+    <Compile Include="GZip\gzipHelper.cs" />
+    <Compile Include="Ini\IniHelper.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Mail\MailSender.cs" />
+    <Compile Include="Parse\parseHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\postFileHelper.cs" />
+    <Compile Include="Serialize\binarySerialize.cs" />
+    <Compile Include="Serialize\Tools\Base\CryptoSerializerProvider.cs" />
+    <Compile Include="Serialize\Tools\Base\EncoderDecoder.cs" />
+    <Compile Include="Serialize\Tools\Base\ISerializer.cs" />
+    <Compile Include="Serialize\Tools\AesSerializer.cs" />
+    <Compile Include="Serialize\Tools\BinarySerializer.cs" />
+    <Compile Include="Serialize\Tools\RsaSerializer.cs" />
+    <Compile Include="Serialize\Tools\RsaDigitalSignatureSerializer.cs" />
+    <Compile Include="Serialize\Tools\RijndaelSerializer.cs" />
+    <Compile Include="Serialize\Tools\GZipSerializer.cs" />
+    <Compile Include="Serialize\Tools\DataContractXmlStringSerializer.cs" />
+    <Compile Include="Serialize\Tools\XmlStringSerializer.cs" />
+    <Compile Include="Sorter\NumberStringSorter.cs" />
+    <Compile Include="Server\BaseIntervalServer.cs" />
+    <Compile Include="Time\bgWorker.cs" />
+    <Compile Include="Server\IBaseServer.cs" />
+    <Compile Include="Time\intervalInvoker.cs" />
+    <Compile Include="Time\delayInvoker.cs" />
+    <Compile Include="Time\ThreadRepeater.cs" />
+    <Compile Include="Utility\CacheHelper.cs" />
+    <Compile Include="Utility\Splitter.cs" />
+    <Compile Include="Utility\compareHelper.cs" />
+    <Compile Include="Utility\eventHelper.cs" />
+    <Compile Include="Utility\regexHelper.cs" />
+    <Compile Include="Time\threadPoolHelper.cs" />
+    <Compile Include="Time\sequenceInvoker.cs" />
+    <Compile Include="Request\requestHelper.cs" />
+    <Compile Include="Utility\colonHelper.cs" />
+    <Compile Include="Ency\ency.cs" />
+    <Compile Include="Utility\uiHelper.cs" />
+    <Compile Include="Window\API\apiHelper.cs" />
+    <Compile Include="Window\AutoRun\RunManager.cs" />
+    <Compile Include="Window\Camera\CameraClass.cs" />
+    <Compile Include="Window\Camera\ICameraClass.cs" />
+    <Compile Include="Window\Device\deviceInfoHelper.cs" />
+    <Compile Include="Window\Hook\Common\MouseHook.cs" />
+    <Compile Include="Window\Hook\Common\KeyboardHook.cs" />
+    <Compile Include="Window\Hook\Common\GlobalHook.cs" />
+    <Compile Include="Window\Hook\KeyboardApi.cs" />
+    <Compile Include="Window\Hook\MouseApi.cs" />
+    <Compile Include="Window\Hook\RamGecTools\KeyboardHook.cs" />
+    <Compile Include="Window\Hook\RamGecTools\MouseHook.cs" />
+    <Compile Include="Window\Input\InputSimulator\IInputDeviceStateAdaptor.cs" />
+    <Compile Include="Window\Input\InputSimulator\IInputMessageDispatcher.cs" />
+    <Compile Include="Window\Input\InputSimulator\IInputSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\IKeyboardSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\IMouseSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\InputBuilder.cs" />
+    <Compile Include="Window\Input\InputSimulator\InputSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\KeyboardSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\MouseButton.cs" />
+    <Compile Include="Window\Input\InputSimulator\MouseSimulator.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\HARDWAREINPUT.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\INPUT.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\InputType.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\KEYBDINPUT.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\KeyboardFlag.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\MouseFlag.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\MOUSEINPUT.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\MOUSEKEYBDHARDWAREINPUT.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\NativeMethods.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\VirtualKeyCode.cs" />
+    <Compile Include="Window\Input\InputSimulator\Native\XButton.cs" />
+    <Compile Include="Window\Input\InputSimulator\WindowsInputDeviceStateAdaptor.cs" />
+    <Compile Include="Window\Input\InputSimulator\WindowsInputMessageDispatcher.cs" />
+    <Compile Include="Window\Input\MouseSimulator.cs" />
+    <Compile Include="Window\Input\KeyboardSimulator.cs" />
+    <Compile Include="Window\Input\StandardShortcut.cs" />
+    <Compile Include="Window\Input\MouseButton.cs" />
+    <Compile Include="Window\Memory\memoryHelper.cs" />
+    <Compile Include="Window\Regedit\regsvrHelper.cs" />
+    <Compile Include="Window\Regedit\regeditHelper.cs" />
+    <Compile Include="Window\Service\ServiceControl.cs" />
+    <Compile Include="Window\Service\ServiceHelper.cs" />
+    <Compile Include="Window\Usb\UsbDeviceListener.cs" />
+    <Compile Include="WndProc\wndProcHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Alerter.resx">
+      <DependentUpon>Alerter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Pager.resx">
+      <DependentUpon>Pager.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extend\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
