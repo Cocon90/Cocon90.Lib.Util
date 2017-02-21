@@ -16,7 +16,7 @@ namespace Cocon90.Lib.Util.Log
         /// Gets the instance.
         /// </summary>
         /// <value>The instance.</value>
-        public Logger Instance
+        public static Logger Instance
         {
             get
             {
