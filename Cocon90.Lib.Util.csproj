@@ -59,6 +59,7 @@
     <Compile Include="Controls\Alerter.Designer.cs">
       <DependentUpon>Alerter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InfoHelper.cs" />
     <Compile Include="Controls\controlHelper.cs" />
     <Compile Include="Controls\FlatButton.cs">
       <SubType>Component</SubType>
@@ -78,12 +79,14 @@
     <Compile Include="Ency\md5.cs" />
     <Compile Include="Ency\md5Sign.cs" />
     <Compile Include="Ency\decy.cs" />
+    <Compile Include="Extend\DatetimeExtension.cs" />
     <Compile Include="GZip\gzipHelper.cs" />
     <Compile Include="Ini\IniHelper.cs" />
     <Compile Include="Log\Logger.cs" />
     <Compile Include="Mail\MailSender.cs" />
     <Compile Include="Parse\parseHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflect\ReflectHelper.cs" />
     <Compile Include="Request\postFileHelper.cs" />
     <Compile Include="Serialize\binarySerialize.cs" />
     <Compile Include="Serialize\Tools\Base\CryptoSerializerProvider.cs" />
@@ -105,6 +108,8 @@
     <Compile Include="Time\delayInvoker.cs" />
     <Compile Include="Time\ThreadRepeater.cs" />
     <Compile Include="Utility\CacheHelper.cs" />
+    <Compile Include="Utility\TextFormat.cs" />
+    <Compile Include="Utility\Randomer.cs" />
     <Compile Include="Utility\Splitter.cs" />
     <Compile Include="Utility\compareHelper.cs" />
     <Compile Include="Utility\eventHelper.cs" />
@@ -159,6 +164,7 @@
     <Compile Include="Window\Regedit\regeditHelper.cs" />
     <Compile Include="Window\Service\ServiceControl.cs" />
     <Compile Include="Window\Service\ServiceHelper.cs" />
+    <Compile Include="Window\Session\CrossSessionExecuter.cs" />
     <Compile Include="Window\Usb\UsbDeviceListener.cs" />
     <Compile Include="WndProc\wndProcHelper.cs" />
   </ItemGroup>
@@ -170,9 +176,7 @@
       <DependentUpon>Pager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extend\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

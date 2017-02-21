@@ -196,26 +196,6 @@
             </summary>
             <param name="control"></param>
         </member>
-        <member name="T:Cocon90.Lib.Util.Controls.MemCombox">
-            <summary>
-            带记忆功能的Combox
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Controls.MemCombox.#ctor">
-            <summary>
-             实例化一个带记忆功能的Combox
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Controls.MemCombox.aIniFileName">
-            <summary>
-            记忆文件的存放名称，系统将存放于程序目录下的"memory"文件夹下
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Controls.MemCombox.aMaxMemCount">
-            <summary>
-            最大记忆的条数
-            </summary>
-        </member>
         <member name="T:Cocon90.Lib.Util.Controls.Msg.Toast">
             <summary>
             平常消息提示
@@ -246,6 +226,26 @@
             关闭消息显示
             </summary>
         </member>
+        <member name="T:Cocon90.Lib.Util.Controls.MemCombox">
+            <summary>
+            带记忆功能的Combox
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Controls.MemCombox.#ctor">
+            <summary>
+             实例化一个带记忆功能的Combox
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Controls.MemCombox.aIniFileName">
+            <summary>
+            记忆文件的存放名称，系统将存放于程序目录下的"memory"文件夹下
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Controls.MemCombox.aMaxMemCount">
+            <summary>
+            最大记忆的条数
+            </summary>
+        </member>
         <member name="T:Cocon90.Lib.Util.Controls.Pager">
             <summary>
             分页控件
@@ -255,11 +255,6 @@
             <summary>
             构建一个分页组件
             </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Controls.Pager.getPageTotal">
-             <summary>
-            获取 页总数 分页后的页总数
-             </summary>
         </member>
         <member name="P:Cocon90.Lib.Util.Controls.Pager.TotalRecord">
              <summary>
@@ -274,6 +269,11 @@
         <member name="P:Cocon90.Lib.Util.Controls.Pager.PageNumber">
              <summary>
             获取或设置 当前页数 当前是第几页(初始为第1页)
+             </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Controls.Pager.getPageTotal">
+             <summary>
+            获取 页总数 分页后的页总数
              </summary>
         </member>
         <member name="T:Cocon90.Lib.Util.Ency.md5">
@@ -328,6 +328,28 @@
             <param name="sourceFilePath">解密的源加密文件路径</param>
             <param name="targetFilePath">解密后存放到哪里</param>
             <param name="isDeleteSoruceFile">解密之后是否删除源加密文件</param>
+            <returns></returns>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Ency.ency">
+            <summary>
+            加密辅助类
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Ency.ency.des(System.String,System.String)">
+            <summary>
+            DES加密字符串
+            </summary>
+            <param name="sourceString">待加密的字符串</param>
+            <param name="encyKeyUse8Letter">加密密钥,要求为8位</param>
+            <returns>加密成功返回加密后的字符串，失败返回源串</returns>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Ency.ency.file(System.String,System.String,System.Boolean)">
+            <summary>
+            对整个文件执行加密
+            </summary>
+            <param name="sourceFilePath">源文件路径</param>
+            <param name="targetFilePath">目标文件存放路径</param>
+            <param name="isDeleteSoruceFile">加密后删源文件否</param>
             <returns></returns>
         </member>
         <member name="T:Cocon90.Lib.Util.GZip.gzipHelper">
@@ -389,6 +411,12 @@
             日志记录工具
             </summary>
         </member>
+        <member name="P:Cocon90.Lib.Util.Log.Logger.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
         <member name="M:Cocon90.Lib.Util.Log.Logger.addToLog(System.String)">
             <summary>
             写到日志
@@ -413,7 +441,7 @@
             </summary>
             <param name="exception"></param>
         </member>
-        <member name="M:Cocon90.Lib.Util.Mail.MailSender.sendMail(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+        <member name="M:Cocon90.Lib.Util.Mail.MailSender.sendMail(System.String,System.String,System.String[],System.String,System.String,System.Boolean,System.Boolean)">
             <summary>
             发送邮件
             </summary>
@@ -426,13 +454,13 @@
             <param name="enableSsl">是否使用SSL安全传输</param>
             <returns>是否发送成功</returns>
         </member>
-        <member name="M:Cocon90.Lib.Util.Mail.MailSender.sendMail(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+        <member name="M:Cocon90.Lib.Util.Mail.MailSender.sendMail(System.String,System.String,System.String,System.Int32,System.String[],System.String,System.String,System.Boolean,System.Boolean)">
             <summary>
             发送邮件
             </summary>
             <param name="senderEmail">发送者的源邮箱 如：source@163.com</param>
             <param name="senderEmailPass">发送者的源邮箱对应的密码 如：123456</param>
-            <param name="targetEmail">目标邮箱，发送给谁如abcdefg@163.com</param>
+            <param name="targetEmails">目标邮箱，发送给谁如abcdefg@163.com</param>
             <param name="subject">邮件主题</param>
             <param name="body">邮件正文</param>
             <param name="isBodyHtml">邮件正文是否是Html内容</param>
@@ -544,21 +572,10 @@
             <param name="num"></param>
             <returns></returns>
         </member>
-        <member name="T:Cocon90.Lib.Web.Request.postFileHelper">
+        <member name="M:Cocon90.Lib.Util.Reflect.ReflectHelper.GetPropertyValues(System.Type,System.Object,System.Boolean,System.Boolean)">
             <summary>
-            以表单文件的形式提交
+            Gets the property values. the key is PropertyName and the value is the parameter obj's value.
             </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Web.Request.postFileHelper.PostFile(System.String,System.String,System.String,System.String,System.String)">
-            <summary>
-            以表单的形式提交文件，可以额外传送一对键值对。stringKey/stringContent
-            </summary>
-            <param name="url">提交到的接收地址</param>
-            <param name="stringKey">额外传送的字符串内容的键</param>
-            <param name="stringContent">额外传送的字符串内容的值</param>
-            <param name="fileKey">上传文件的键</param>
-            <param name="filePath">文件全路径</param>
-            <returns></returns>
         </member>
         <member name="T:Cocon90.Lib.Util.Serialize.binarySerialize">
             <summary>
@@ -603,24 +620,9 @@
             定时执行服务，需要子类实现 
             </summary>
         </member>
-        <member name="T:Cocon90.Lib.Util.Server.IBaseServer">
+        <member name="P:Cocon90.Lib.Util.Server.BaseIntervalServer.IntervalMisseconds">
             <summary>
-            表示一个服务。
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Server.IBaseServer.Start">
-            <summary>
-            启动服务
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Server.IBaseServer.Stop">
-            <summary>
-            停止服务
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Server.IBaseServer.IsRunning">
-            <summary>
-            获取或设置 服务是否正在运行。
+            获取或设置 间隔多称时间执行一次DoSomeThing方法。
             </summary>
         </member>
         <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.#ctor(System.Int64)">
@@ -632,28 +634,6 @@
         <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.#ctor(System.Int64,System.Int64)">
             <summary>
             间隔多少毫秒执行一次，和检测的最小单位
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.Start">
-            <summary>
-            启动服务。
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.DoSomeThing(System.Nullable{System.DateTime},System.Int64)">
-            <summary>
-            要不断调用的方法。
-            </summary>
-            <param name="startTime"></param>
-            <param name="count"></param>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.Stop">
-            <summary>
-            停止服务
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Server.BaseIntervalServer.IntervalMisseconds">
-            <summary>
-            获取或设置 间隔多称时间执行一次DoSomeThing方法。
             </summary>
         </member>
         <member name="P:Cocon90.Lib.Util.Server.BaseIntervalServer.PerSleepMissecond">
@@ -676,25 +656,47 @@
             指示当前服务调用了多少次DoSomeThing方法。
             </summary>
         </member>
+        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.Start">
+            <summary>
+            启动服务。
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.DoSomeThing(System.Nullable{System.DateTime},System.Int64)">
+            <summary>
+            要不断调用的方法。
+            </summary>
+            <param name="startTime"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Server.BaseIntervalServer.Stop">
+            <summary>
+            停止服务
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Server.IBaseServer">
+            <summary>
+            表示一个服务。
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Server.IBaseServer.IsRunning">
+            <summary>
+            获取或设置 服务是否正在运行。
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Server.IBaseServer.Start">
+            <summary>
+            启动服务
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Server.IBaseServer.Stop">
+            <summary>
+            停止服务
+            </summary>
+        </member>
         <member name="T:Cocon90.Lib.Util.Time.bgWorker">
             <summary>
             BackgroundWorker类的辅助类
             </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Time.bgWorker.runAsync(Cocon90.Lib.Util.Time.bgWorker.ArgumentDelegate,Cocon90.Lib.Util.Time.bgWorker.ArgumentDelegate)">
-            <summary>
-            执行新BackgroundWorker实体的RunWorkerAsync方法，doWork内的代码是在多线程中运行的。workCompleted中的代码将会在当前线程中运行。
-            </summary>
-            <param name="doWork">要使用背景线程做的事情，做完事后，把结果交给doWork的参数ArgumentEntry对像。</param>
-            <param name="workCompleted">把结果以ArgumentEntry对像为参数传出来。当前线程去执行workCompleted。</param>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Time.bgWorker.runAsync``1(System.Func{``0},System.Action{``0})">
-            <summary>
-            执行新BackgroundWorker实体的RunWorkerAsync方法，doWork内的代码是在多线程中运行的。workCompleted中的代码将会在当前线程中运行
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="doWork"></param>
-            <param name="workCompleted"></param>
         </member>
         <member name="P:Cocon90.Lib.Util.Time.bgWorker.ArgumentEntry.ObjectResult">
             <summary>
@@ -721,10 +723,31 @@
             IList类型对像，注意，默认为NULL
             </summary>
         </member>
+        <member name="M:Cocon90.Lib.Util.Time.bgWorker.runAsync(Cocon90.Lib.Util.Time.bgWorker.ArgumentDelegate,Cocon90.Lib.Util.Time.bgWorker.ArgumentDelegate)">
+            <summary>
+            执行新BackgroundWorker实体的RunWorkerAsync方法，doWork内的代码是在多线程中运行的。workCompleted中的代码将会在当前线程中运行。
+            </summary>
+            <param name="doWork">要使用背景线程做的事情，做完事后，把结果交给doWork的参数ArgumentEntry对像。</param>
+            <param name="workCompleted">把结果以ArgumentEntry对像为参数传出来。当前线程去执行workCompleted。</param>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Time.bgWorker.runAsync``1(System.Func{``0},System.Action{``0})">
+            <summary>
+            执行新BackgroundWorker实体的RunWorkerAsync方法，doWork内的代码是在多线程中运行的。workCompleted中的代码将会在当前线程中运行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="doWork"></param>
+            <param name="workCompleted"></param>
+        </member>
         <member name="T:Cocon90.Lib.Util.Time.intervalInvoker">
             <summary>
             用来重复执行某事
             </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Time.intervalInvoker.DoWork">
+            <summary>
+            委托，表示要执行的事件。传出当前执行次数。
+            </summary>
+            <param name="currentCount"></param>
         </member>
         <member name="M:Cocon90.Lib.Util.Time.intervalInvoker.Invoke(System.Int32,System.Int32,System.Boolean,Cocon90.Lib.Util.Time.intervalInvoker.DoWork,System.Action)">
             <summary>
@@ -735,12 +758,6 @@
             <param name="isActionStart"></param>
             <param name="action"></param>
             <param name="finishAction"></param>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Time.intervalInvoker.DoWork">
-            <summary>
-            委托，表示要执行的事件。传出当前执行次数。
-            </summary>
-            <param name="currentCount"></param>
         </member>
         <member name="T:Cocon90.Lib.Util.Time.delayInvoker">
             <summary>
@@ -775,129 +792,6 @@
             <summary>
             停止线程操作
             </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1">
-            <summary>
-            缓存辅助 T为缓存数据的类型
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.#ctor(System.Int32)">
-            <summary>
-            构建一个缓存辅助类
-            </summary>
-            <param name="intervalSeconds"></param>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.UpdateCache(System.String,`0)">
-            <summary>
-            更新数据到缓存,如果没有，则创建
-            </summary>
-            <param name="data"></param>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.ReadCache(System.String,Cocon90.Lib.Util.Utility.CacheHelper{`0}.GenerateDataDelegate)">
-            <summary>
-            数据取缓存，如果有缓冲中有数据且时间小于IntervalSeconds则取缓冲，否则通过generateDataMethod的返回值取得数据并存起来。
-            </summary>
-            <param name="key"></param>
-            <param name="generateDataMethod"></param>
-            <returns></returns>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.IntervalSeconds">
-            <summary>
-            传入间隔时间
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheData">
-            <summary>
-            缓冲数据字典
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1.GenerateDataDelegate">
-            <summary>
-            返回数据的委托
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1">
-            <summary>
-            缓存数据实体
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.CacheId">
-            <summary>
-            缓存实体的唯一标记
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.Data">
-            <summary>
-            缓存的数据
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.UpdateTime">
-            <summary>
-            最近一次更新日期
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.Splitter`1">
-            <summary>
-            通用分支器
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.Splitter`1.Filter">
-            <summary>
-            分支选择过滤器
-            </summary>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Utility.Splitter`1.SplitterDictionary">
-            <summary>
-            分支器字典
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.compareHelper">
-            <summary>
-            比较两具元素是的辅助类
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.compareHelper.arrayCompare(System.Array,System.Array)">
-            <summary>
-            比较两个数组的元素是否一一对应且相同。
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.eventHelper">
-            <summary>
-            事件委托辅助类
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.eventHelper.notifyEvent(System.Action)">
-            <summary>
-            通知事件。传入Null时不通知。
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Utility.regexHelper">
-            <summary>
-            正则表达式辅助类
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.checkIP(System.String)">
-            <summary>
-            正规则试验IP地址
-            </summary>
-            <param name="IP"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.isNullOrEmpty(System.String)">
-            <summary>
-            判断一个字符串是否是NULL或者是空格组成的字符串或者是空字符串。
-            </summary>
-            <param name="oldString"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.trimEmpty(System.String)">
-            <summary>
-            返回一个字符串对像的字符形式。如传入NULL则返回空字符串。
-            </summary>
-            <param name="oldString"></param>
-            <returns></returns>
         </member>
         <member name="T:Cocon90.Lib.Util.Time.threadPoolHelper">
             <summary>
@@ -962,27 +856,133 @@
             <param name="action"></param>
             <param name="invokeFinish"></param>
         </member>
-        <member name="T:Cocon90.Lib.Util.Request.requestHelper">
+        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1">
             <summary>
-            请求辅助功能
+            缓存辅助 T为缓存数据的类型
             </summary>
         </member>
-        <member name="M:Cocon90.Lib.Util.Request.requestHelper.OpenRead(System.String,System.Net.OpenReadCompletedEventHandler)">
+        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.IntervalSeconds">
             <summary>
-            开始向此URL发请求（自动将使用异常读取的方式），请求完成后调用readComplted（2参数）委托
-            </summary>
-            <param name="url"></param>
-            <param name="readComplted"></param>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Request.requestHelper.PostFile(System.String,System.String,System.Net.UploadFileCompletedEventHandler)">
-            <summary>
-            异步上传文件到到指定的Url页面。其中filePath为本地文件全路径，uploadFinish表示发送成功时执行的委托
+            传入间隔时间
             </summary>
         </member>
-        <member name="P:Cocon90.Lib.Util.Request.requestHelper.Cookie">
+        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.#ctor(System.Int32)">
             <summary>
-            获取或设置当前的请求的Cookie容器。
+            构建一个缓存辅助类
             </summary>
+            <param name="intervalSeconds"></param>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheData">
+            <summary>
+            缓冲数据字典
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.UpdateCache(System.String,`0)">
+            <summary>
+            更新数据到缓存,如果没有，则创建
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.CacheHelper`1.ReadCache(System.String,Cocon90.Lib.Util.Utility.CacheHelper{`0}.GenerateDataDelegate)">
+            <summary>
+            数据取缓存，如果有缓冲中有数据且时间小于IntervalSeconds则取缓冲，否则通过generateDataMethod的返回值取得数据并存起来。
+            </summary>
+            <param name="key"></param>
+            <param name="generateDataMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1.GenerateDataDelegate">
+            <summary>
+            返回数据的委托
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1">
+            <summary>
+            缓存数据实体
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.CacheId">
+            <summary>
+            缓存实体的唯一标记
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.Data">
+            <summary>
+            缓存的数据
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.CacheHelper`1.CacheModel`1.UpdateTime">
+            <summary>
+            最近一次更新日期
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.TextFormat">
+            <summary>
+            将UTF8编码的文本文档中的内容，按行读出，每行中以|分隔的内容，将作为数组。
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.Splitter`1">
+            <summary>
+            通用分支器
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.Splitter`1.Filter">
+            <summary>
+            分支选择过滤器
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Utility.Splitter`1.SplitterDictionary">
+            <summary>
+            分支器字典
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.compareHelper">
+            <summary>
+            比较两具元素是的辅助类
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.compareHelper.arrayCompare(System.Array,System.Array)">
+            <summary>
+            比较两个数组的元素是否一一对应且相同。
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.eventHelper">
+            <summary>
+            事件委托辅助类
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.eventHelper.notifyEvent(System.Action)">
+            <summary>
+            通知事件。传入Null时不通知。
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Utility.regexHelper">
+            <summary>
+            正则表达式辅助类
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.checkIP(System.String)">
+            <summary>
+            正规则试验IP地址
+            </summary>
+            <param name="IP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.isNullOrEmpty(System.String)">
+            <summary>
+            判断一个字符串是否是NULL或者是空格组成的字符串或者是空字符串。
+            </summary>
+            <param name="oldString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Utility.regexHelper.trimEmpty(System.String)">
+            <summary>
+            返回一个字符串对像的字符形式。如传入NULL则返回空字符串。
+            </summary>
+            <param name="oldString"></param>
+            <returns></returns>
         </member>
         <member name="T:Cocon90.Lib.Util.Utility.cloneHelper`1">
             <summary>
@@ -1052,28 +1052,6 @@
             <param name="fromModel"></param>
             <param name="toModel"></param>
         </member>
-        <member name="T:Cocon90.Lib.Util.Ency.ency">
-            <summary>
-            加密辅助类
-            </summary>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Ency.ency.des(System.String,System.String)">
-            <summary>
-            DES加密字符串
-            </summary>
-            <param name="sourceString">待加密的字符串</param>
-            <param name="encyKeyUse8Letter">加密密钥,要求为8位</param>
-            <returns>加密成功返回加密后的字符串，失败返回源串</returns>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Ency.ency.file(System.String,System.String,System.Boolean)">
-            <summary>
-            对整个文件执行加密
-            </summary>
-            <param name="sourceFilePath">源文件路径</param>
-            <param name="targetFilePath">目标文件存放路径</param>
-            <param name="isDeleteSoruceFile">加密后删源文件否</param>
-            <returns></returns>
-        </member>
         <member name="M:Cocon90.Lib.Util.Utility.uiHelper`1.getModelFromUI(System.Windows.Forms.Control)">
             <summary>
             将界面上controlPanel容器内的控件值付给T实体并反回。
@@ -1088,6 +1066,28 @@
             1、如果实器内的控件为Label则自动跳过不处理。
             2、如果容器内的控件的Name和实体中的属性值相同(不区分大小写)，则自动给其Text属性赋；
             3、如果容器内的控件Name是以：实体属性名+"控件属性名"名称，则自动赋值给该属性；如果控件的属性值是常见8种数据类型和DateTime类型，则进行数据转换后再赋值，如果转换失败，则使用Tag中的值，若Tag中的值也转换失败，则使用0或DateTime.Now做为默认值
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Request.requestHelper">
+            <summary>
+            请求辅助功能
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Request.requestHelper.OpenRead(System.String,System.Net.OpenReadCompletedEventHandler)">
+            <summary>
+            开始向此URL发请求（自动将使用异常读取的方式），请求完成后调用readComplted（2参数）委托
+            </summary>
+            <param name="url"></param>
+            <param name="readComplted"></param>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Request.requestHelper.PostFile(System.String,System.String,System.Net.UploadFileCompletedEventHandler)">
+            <summary>
+            异步上传文件到到指定的Url页面。其中filePath为本地文件全路径，uploadFinish表示发送成功时执行的委托
+            </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Request.requestHelper.Cookie">
+            <summary>
+            获取或设置当前的请求的Cookie容器。
             </summary>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.API.apiHelper">
@@ -1194,11 +1194,6 @@
             鼠标钩子
             </summary>
         </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.Common.GlobalHook">
-            <summary>
-            表示一个钩子，抽象类
-            </summary>
-        </member>
         <member name="M:Cocon90.Lib.Util.Window.Hook.Common.MouseHook.#ctor">
             <summary>
             鼠标钩子
@@ -1214,10 +1209,27 @@
             键盘钩子
             </summary>
         </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.Common.GlobalHook">
+            <summary>
+            表示一个钩子，抽象类
+            </summary>
+        </member>
         <member name="T:Cocon90.Lib.Util.Window.Hook.KeyboardApi">
             <summary>
             键盘操作辅助类（使用键盘钩子）
             </summary>  
+        </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.KeyboardApi.KeyboardEventHandler">
+            <summary>
+            键盘事件的委托
+            </summary>
+            <param name="keyEvent"></param>
+            <param name="key"></param>
+        </member>
+        <member name="E:Cocon90.Lib.Util.Window.Hook.KeyboardApi.KeyboardEvent">
+            <summary>
+            键盘事件
+            </summary>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Hook.KeyboardApi.#ctor">
             <summary>
@@ -1236,18 +1248,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="E:Cocon90.Lib.Util.Window.Hook.KeyboardApi.KeyboardEvent">
-            <summary>
-            键盘事件
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.KeyboardApi.KeyboardEventHandler">
-            <summary>
-            键盘事件的委托
-            </summary>
-            <param name="keyEvent"></param>
-            <param name="key"></param>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Hook.KeyboardApi.KeyboardEvents">
             <summary>
             键盘按键动作枚举
@@ -1263,10 +1263,21 @@
             Class for intercepting low level keyboard hooks
             </summary>
         </member>
-        <member name="F:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.WM_KEYDOWN">
+        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.VKeys">
             <summary>
-            Low-Level function declarations
+            Virtual Keys
             </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.KeyboardHookHandler">
+            <summary>
+            Internal callback processing function
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.KeyboardHookCallback">
+            <summary>
+            Function that will be called when defined events occur
+            </summary>
+            <param name="key">VKeys</param>
         </member>
         <member name="F:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.hookID">
             <summary>
@@ -1300,26 +1311,26 @@
             Destructor. Unhook current hook
             </summary>
         </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.VKeys">
+        <member name="F:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.WM_KEYDOWN">
             <summary>
-            Virtual Keys
+            Low-Level function declarations
             </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.KeyboardHookHandler">
-            <summary>
-            Internal callback processing function
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.KeyboardHook.KeyboardHookCallback">
-            <summary>
-            Function that will be called when defined events occur
-            </summary>
-            <param name="key">VKeys</param>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook">
             <summary>
             Class for intercepting low level Windows mouse hooks.
             </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook.MouseHookHandler">
+            <summary>
+            Internal callback processing function
+            </summary>
+        </member>
+        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook.MouseHookCallback">
+            <summary>
+            Function to be called when defined even occurs
+            </summary>
+            <param name="mouseStruct">MSLLHOOKSTRUCT mouse structure</param>
         </member>
         <member name="F:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook.hookID">
             <summary>
@@ -1353,17 +1364,6 @@
             <summary>
             Callback function
             </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook.MouseHookHandler">
-            <summary>
-            Internal callback processing function
-            </summary>
-        </member>
-        <member name="T:Cocon90.Lib.Util.Window.Hook.RamGecTools.MouseHook.MouseHookCallback">
-            <summary>
-            Function to be called when defined even occurs
-            </summary>
-            <param name="mouseStruct">MSLLHOOKSTRUCT mouse structure</param>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputDeviceStateAdaptor">
             <summary>
@@ -1457,6 +1457,12 @@
             The service contract for a keyboard simulator for the Windows platform.
             </summary>
         </member>
+        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator.Mouse">
+            <summary>
+            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance for simulating Mouse input.
+            </summary>
+            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance.</value>
+        </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator.KeyDown(Cocon90.Lib.Util.Window.Input.InputSimulator.Native.VirtualKeyCode)">
             <summary>
             Simulates the key down gesture for the specified key.
@@ -1537,16 +1543,16 @@
             </summary>
             <param name="timeout">The time to wait.</param>
         </member>
-        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator.Mouse">
-            <summary>
-            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance for simulating Mouse input.
-            </summary>
-            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance.</value>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator">
             <summary>
             The service contract for a mouse simulator for the Windows platform.
             </summary>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator.Keyboard">
+            <summary>
+            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance for simulating Keyboard input.
+            </summary>
+            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance.</value>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator.MoveMouseBy(System.Int32,System.Int32)">
             <summary>
@@ -1657,12 +1663,6 @@
             </summary>
             <param name="timeout">The time to wait.</param>
         </member>
-        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator.Keyboard">
-            <summary>
-            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance for simulating Keyboard input.
-            </summary>
-            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance.</value>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.InputBuilder">
             <summary>
             A helper class for building a list of <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages ready to be sent to the native Windows API.
@@ -1701,6 +1701,12 @@
             An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the list of <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages.
             </returns>
             <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.InputBuilder.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> at the specified position.
+            </summary>
+            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> message at the specified position.</value>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.InputBuilder.IsExtendedKey(Cocon90.Lib.Util.Window.Input.InputSimulator.Native.VirtualKeyCode)">
             <summary>
@@ -1850,12 +1856,6 @@
             <param name="scrollAmount"></param>
             <returns>This <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.InputBuilder"/> instance.</returns>
         </member>
-        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.InputBuilder.Item(System.Int32)">
-            <summary>
-            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> at the specified position.
-            </summary>
-            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> message at the specified position.</value>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.InputSimulator">
             <summary>
             Implements the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputSimulator"/> interface to simulate Keyboard and Mouse input and provide the state of those input devices.
@@ -1930,6 +1930,12 @@
             <param name="inputSimulator">The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputSimulator"/> that owns this instance.</param>
             <param name="messageDispatcher">The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputMessageDispatcher"/> to use for dispatching <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages.</param>
             <exception cref="T:System.InvalidOperationException">If null is passed as the <paramref name="messageDispatcher"/>.</exception>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.KeyboardSimulator.Mouse">
+            <summary>
+            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance for simulating Mouse input.
+            </summary>
+            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance.</value>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.KeyboardSimulator.SendSimulatedInput(Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT[])">
             <summary>
@@ -2017,12 +2023,6 @@
             </summary>
             <param name="timeout">The time to wait.</param>
         </member>
-        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.KeyboardSimulator.Mouse">
-            <summary>
-            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance for simulating Mouse input.
-            </summary>
-            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IMouseSimulator"/> instance.</value>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.MouseButton">
             <summary>
             The mouse button
@@ -2066,6 +2066,12 @@
             <param name="inputSimulator">The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputSimulator"/> that owns this instance.</param>
             <param name="messageDispatcher">The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputMessageDispatcher"/> to use for dispatching <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages.</param>
             <exception cref="T:System.InvalidOperationException">If null is passed as the <paramref name="messageDispatcher"/>.</exception>
+        </member>
+        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.MouseSimulator.Keyboard">
+            <summary>
+            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance for simulating Keyboard input.
+            </summary>
+            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance.</value>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.MouseSimulator.SendSimulatedInput(Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT[])">
             <summary>
@@ -2181,12 +2187,6 @@
             Sleeps the executing thread to create a pause between simulated inputs.
             </summary>
             <param name="timeout">The time to wait.</param>
-        </member>
-        <member name="P:Cocon90.Lib.Util.Window.Input.InputSimulator.MouseSimulator.Keyboard">
-            <summary>
-            Gets the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance for simulating Keyboard input.
-            </summary>
-            <value>The <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IKeyboardSimulator"/> instance.</value>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.HARDWAREINPUT">
             <summary>
@@ -3565,12 +3565,12 @@
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Input.InputSimulator.WindowsInputMessageDispatcher">
             <summary>
-            Implements the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputMessageDispatcher"/> by calling /&gt;.
+            Implements the <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.IInputMessageDispatcher"/> by calling />.
             </summary>
         </member>
         <member name="M:Cocon90.Lib.Util.Window.Input.InputSimulator.WindowsInputMessageDispatcher.DispatchInput(Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT[])">
             <summary>
-            Dispatches the specified list of <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages in their specified order by issuing a single called to <see/>.
+            Dispatches the specified list of <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages in their specified order by issuing a single called to <see />.
             </summary>
             <param name="inputs">The list of <see cref="T:Cocon90.Lib.Util.Window.Input.InputSimulator.Native.INPUT"/> messages to be dispatched.</param>
             <exception cref="T:System.ArgumentException">If the <paramref name="inputs"/> array is empty.</exception>
@@ -3611,22 +3611,6 @@
             dll或ocx注册工具
             </summary>
         </member>
-        <member name="M:Cocon90.Lib.Util.Window.Regedit.regsvrHelper.RegControl(System.Guid,System.String,System.String)">
-            <summary>
-            注册控件，clsidGuid:传入注册的CLSID编码(Guid值)用为组件的唯一编号。ocxNote:备注 。ocxFilePath文件路径 
-            </summary>
-            <param name="ocxFilePath"></param>
-            <returns>[0]--已经注册过;[1]--注册成功；[-1]--注册失败；[-2]--预注册的.OCX文件不存在</returns>
-        </member>
-        <member name="M:Cocon90.Lib.Util.Window.Regedit.regsvrHelper.RunCmd(System.String)">
-            <summary>
-            Process类调用外部程序regsvr32.exe程序
-            加入参数 "/c " + 要执行的命令来执行一个dos命令
-            （/c代表执行参数指定的命令后关闭cmd.exe /k参数则不关闭cmd.exe）
-            </summary>
-            <param name="command"></param>
-            <returns></returns>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Regedit.regsvrHelper.RegResult">
             <summary>
             注册结果
@@ -3651,6 +3635,22 @@
             <summary>
             预注册的.OCX或dll文件不存在
             </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Window.Regedit.regsvrHelper.RegControl(System.Guid,System.String,System.String)">
+            <summary>
+            注册控件，clsidGuid:传入注册的CLSID编码(Guid值)用为组件的唯一编号。ocxNote:备注 。ocxFilePath文件路径 
+            </summary>
+            <param name="ocxFilePath"></param>
+            <returns>[0]--已经注册过;[1]--注册成功；[-1]--注册失败；[-2]--预注册的.OCX文件不存在</returns>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Window.Regedit.regsvrHelper.RunCmd(System.String)">
+            <summary>
+            Process类调用外部程序regsvr32.exe程序
+            加入参数 "/c " + 要执行的命令来执行一个dos命令
+            （/c代表执行参数指定的命令后关闭cmd.exe /k参数则不关闭cmd.exe）
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Regedit.regeditHelper">
             <summary>
@@ -3846,6 +3846,28 @@
             服务状态
             </summary>
         </member>
+        <member name="T:Cocon90.Lib.Util.Window.Session.CrossSessionExecuter">
+            <summary>
+            Windows跨Session辅助执行者
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Window.Session.CrossSessionExecuter.StartProcessAsCurrentUser(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            启动一个进程
+            </summary>
+            <param name="appPath"></param>
+            <param name="cmdLine"></param>
+            <param name="workDir"></param>
+            <param name="visible"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cocon90.Lib.Util.Window.Session.CrossSessionExecuter.ShowMessageBox(System.String,System.String)">
+            <summary>
+            显示消息框
+            </summary>
+            <param name="message"></param>
+            <param name="title"></param>
+        </member>
         <member name="T:Cocon90.Lib.Util.Window.Usb.UsbDeviceListener">
             <summary>
             USB存储设备监听类
@@ -3867,16 +3889,16 @@
             </summary>
             <param name="m"></param>
         </member>
-        <member name="E:Cocon90.Lib.Util.Window.Usb.UsbDeviceListener.OnUsbRemovableStatusChanged">
-            <summary>
-            事件 USB可移动存储设备改变时发生
-            </summary>
-        </member>
         <member name="T:Cocon90.Lib.Util.Window.Usb.UsbDeviceListener.UsbRemovableStatusChanged">
             <summary>
             USB可移动存储设备改变委托
             </summary>
             <param name="status"></param>
+        </member>
+        <member name="E:Cocon90.Lib.Util.Window.Usb.UsbDeviceListener.OnUsbRemovableStatusChanged">
+            <summary>
+            事件 USB可移动存储设备改变时发生
+            </summary>
         </member>
         <member name="T:Cocon90.Lib.Util.Window.Usb.USBSerialNumber">
             <summary>
@@ -3965,6 +3987,50 @@
             <param name="from">要Hide的窗口</param>
             <param name="m">传入override void WndProc(ref Message m)中的m</param>
             <param name="action">最小化后要执行的其它操作。</param>
+        </member>
+        <member name="T:Cocon90.Lib.Web.Request.postFileHelper">
+            <summary>
+            以表单文件的形式提交
+            </summary>
+        </member>
+        <member name="M:Cocon90.Lib.Web.Request.postFileHelper.PostFile(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            以表单的形式提交文件，可以额外传送一对键值对。stringKey/stringContent
+            </summary>
+            <param name="url">提交到的接收地址</param>
+            <param name="stringKey">额外传送的字符串内容的键</param>
+            <param name="stringContent">额外传送的字符串内容的值</param>
+            <param name="fileKey">上传文件的键</param>
+            <param name="filePath">文件全路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.DatetimeExtension.StartOfDay(System.DateTime)">
+            <summary>
+            取得该日期的日初
+            </summary>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.DatetimeExtension.EndOfDay(System.DateTime)">
+            <summary>
+            取得该日期的日末，精确到最后一毫秒
+            </summary>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.DatetimeExtension.ConvertIntDateTime(System.Double)">
+            <summary>
+            将Unix时间戳转换为DateTime类型时间
+            </summary>
+            <param name="d">double 型数字</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:System.DatetimeExtension.ConvertDateTimeInt(System.DateTime)">
+            <summary>
+            将c# DateTime时间格式转换为Unix时间戳格式
+            </summary>
+            <param name="time">时间</param>
+            <returns>long</returns>
         </member>
     </members>
 </doc>

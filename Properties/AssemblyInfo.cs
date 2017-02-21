@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Cocon90.Lib.Util")]
-[assembly: AssemblyDescription("山东海天学院 宋兴柱")]
+[assembly: AssemblyDescription("山东海天学院，山东大学 宋兴柱")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cocon90 or SongXingZhu")]
 [assembly: AssemblyProduct("Cocon90.Lib.Util")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.0.0")]
-[assembly: AssemblyFileVersion("1.5.0.0")]
+[assembly: AssemblyVersion("1.6.0.0")]
+[assembly: AssemblyFileVersion("1.6.0.0")]

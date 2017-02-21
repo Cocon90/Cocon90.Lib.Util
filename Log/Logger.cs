@@ -11,6 +11,19 @@ namespace Cocon90.Lib.Util.Log
     /// </summary>
     public class Logger
     {
+        static Logger _Logger;
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        public Logger Instance
+        {
+            get
+            {
+                if (_Logger == null) _Logger = new Logger(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs"));
+                return _Logger;
+            }
+        }
         public Logger(string LogDirectory)
         {
 
@@ -28,7 +41,7 @@ namespace Cocon90.Lib.Util.Log
             {
                 string pth = LogDirectory;
                 if (!System.IO.Directory.Exists(pth)) System.IO.Directory.CreateDirectory(pth);
-                string log = String.Format("{0}{1}.txt", pth, DateTime.Now.ToString("yyyy年MM月dd日"));
+                string log = Path.Combine(pth, DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
                 FileStream fs;
                 msg = msg ?? "";
                 lock (msg)
@@ -69,10 +82,10 @@ namespace Cocon90.Lib.Util.Log
         {
             lock (obj)
             {
-               
+
                 string pth = LogDirectory;
                 if (!System.IO.Directory.Exists(pth)) System.IO.Directory.CreateDirectory(pth);
-                string log = String.Format("{0}{1}.txt", pth, DateTime.Now.ToString("yyyy年MM月dd日"));
+                string log = Path.Combine(pth, DateTime.Now.ToString("yyyy-MM-dd") + ".txt");
                 FileStream fs;
                 msg = msg ?? "";
                 lock (msg)

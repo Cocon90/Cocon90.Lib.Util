@@ -111,3 +111,12 @@ D:\Projects\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.XML
 D:\Projects\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.dll
 D:\Projects\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.pdb
 D:\Projects\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.csprojResolveAssemblyReference.cache
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.XML
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.dll
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\bin\Debug\Cocon90.Lib.Util.pdb
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.csprojResolveAssemblyReference.cache
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.Controls.Alerter.resources
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.Controls.Pager.resources
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.csproj.GenerateResource.Cache
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.dll
+D:\Project\NetProject\Cocon90.Lib\code\Cocon90.Lib.Util\obj\Debug\Cocon90.Lib.Util.pdb
